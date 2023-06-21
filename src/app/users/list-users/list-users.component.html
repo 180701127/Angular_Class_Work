@@ -1,0 +1,17 @@
+<p>list-users works!</p>
+<ul *ngFor="let u of userdata">
+    <li>{{u.name}}</li>
+</ul>
+<app-filter-users [course]="'Python'" [student]="'Logesh'" (Updated_List)="listupdate($event)"></app-filter-users>
+<h1>{{listdata | json}}</h1>
+<ul *ngFor="let u of listdata">
+    <li>
+        {{u.id}}
+    </li>
+    <li>
+        {{u.name}}
+    </li>
+    <li>
+        {{u.age}}
+    </li>
+</ul>

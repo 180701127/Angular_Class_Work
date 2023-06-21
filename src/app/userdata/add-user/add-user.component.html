@@ -1,0 +1,18 @@
+
+<form [formGroup]="addUserForm">
+    <input type="text" formControlName="name">
+    <div class = "text-danger" *ngIf = "addUserForm.get('username')?.hasError('required')&&addUserForm.get('username')?.touched">UserName is required. Please enter your user name.
+
+    </div>
+
+    <textarea formControlName="LoanDescription"></textarea>
+    <div class = "text-danger" *ngIf = "addUserForm.get('LoanDescription')?.hasError('maxlength')&& addUserForm.get('LoanDescription')?.touched">Add your contents in range of 5-10 letters
+
+    </div>
+    <!--<div class="text-danger" *ngIf="addUserForm.get('description')?.hasError('required') && addUserForm.get('description').touched || 
+                                    addUserForm.get('description')?.hasError('minlength') && addUserForm.get('description').touched || 
+                                    addUserForm.get('description')?.hasError('maxlength') && addUserForm.get('description').touched">
+    Add your content in the range of 5-10 letters.
+  </div>-->
+    <button (click)="createuser()" [disabled]="!(addUserForm.valid)">ADD USER </button>
+</form>

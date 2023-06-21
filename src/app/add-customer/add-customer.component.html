@@ -1,0 +1,17 @@
+<form #addcustomerforms="ngForm" (ngSubmit)="customerADD(addcustomerforms)" >
+    <input type = "text" placeholder="Enter name" name="firstname" required [(ngModel)] = "firstname"><br>
+    The name Entered is: {{firstname}}<br>
+    <input type ="number" placeholder = "Enter age" name="age" [(ngModel)] = "age"><br>
+    The Age Entered is: {{age}} <br>
+    <input type="checkbox" name="terms" required [(ngModel)]="terms">Agree to terms and conditions
+    <select name="customertype" required [(ngModel)]="customertype">
+        <option value="1200">Premium</option>
+        <option value="1400">Standard</option>
+        <option value="2000">Enterprise</option>
+    </select>
+    <textarea name="description" minlength="10" maxlength="15" [(ngModel)]="description"></textarea>
+    <input type="submit" [disabled]="!(addcustomerforms.valid)"> <br>
+    <button (click)="flushdata(addcustomerforms)">Data</button>
+    <button (click)="cleardata(addcustomerforms)">Data_1</button>
+</form>
+
